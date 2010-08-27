@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
-  validates_presence_of :name, :email
+  FEMALE = 0
+  MALE = 1
+  
+  validates_presence_of :name, :email, :sex
   validates_uniqueness_of :email
 end

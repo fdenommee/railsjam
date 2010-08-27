@@ -22,9 +22,9 @@
 
  <div class="field">
     <%= f.label :female %>
-    <%= f.radio_button :sex, 0 %>
+    <%= f.radio_button :sex, User::FEMALE %>
     <%= f.label :male %>
-    <%= f.radio_button :sex, 1 %>
+    <%= f.radio_button :sex, User::MALE %>
   </div> 
 
   <div class="actions">
