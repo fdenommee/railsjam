@@ -1,4 +1,6 @@
 RailsJam::Application.routes.draw do
+  resources :notes
+
   resources :users
 
   # The priority is based upon order of creation:
