@@ -13,3 +13,29 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+
+<h1>Listing notes</h1>
+
+<table>
+  <tr>
+    <th>Text</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @user.notes.each do |note| %>
+  <tr>
+    <td><%= note.text %></td>
+    <td><%= link_to 'Show', note_path(note) %></td>
+    <td><%= link_to 'Edit', edit_note_path(note) %></td>
+    <td><%= link_to 'Destroy', user_path(note), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Note', new_note_path %>
