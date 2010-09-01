@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(:version => 20100901000938) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "sex"
+    t.integer  "gender"
   end
 
 end
