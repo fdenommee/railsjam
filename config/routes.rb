@@ -2,6 +2,7 @@ RailsJam::Application.routes.draw do
 
   resources :users do
     resources :notes
+    resources :links
   end
 
 

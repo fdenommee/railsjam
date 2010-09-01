@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
 
   has_many :notes
+  has_many :links
 end
