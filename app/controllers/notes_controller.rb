@@ -13,7 +13,8 @@ class NotesController < ApplicationController
   # GET /notes/1
   # GET /notes/1.xml
   def show
-    @note = Note.find(params[:id])
+    @user = User.find(params[:user_id])
+    @note = @user.notes.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,6 +25,7 @@ class NotesController < ApplicationController
   # GET /notes/new
   # GET /notes/new.xml
   def new
+    @user = User.find(params[:user_id])
     @note = Note.new
 
     respond_to do |format|
@@ -34,17 +36,19 @@ class NotesController < ApplicationController
 
   # GET /notes/1/edit
   def edit
-    @note = Note.find(params[:id])
+    @user = User.find(params[:user_id])
+    @note = @user.notes.find(params[:id])
   end
 
   # POST /notes
   # POST /notes.xml
   def create
-    @note = Note.new(params[:note])
+    @user = User.find(params[:user_id])
+    @note = @user.notes.new(params[:note])
 
     respond_to do |format|
       if @note.save
-        format.html { redirect_to(@note, :notice => 'Note was successfully created.') }
+        format.html { redirect_to(@user, :notice => 'Note was successfully created.') }
         format.xml  { render :xml => @note, :status => :created, :location => @note }
       else
         format.html { render :action => "new" }
@@ -56,11 +60,12 @@ class NotesController < ApplicationController
   # PUT /notes/1
   # PUT /notes/1.xml
   def update
-    @note = Note.find(params[:id])
+    @user = User.find(params[:user_id])
+    @note = @user.notes.find(params[:id])
 
     respond_to do |format|
       if @note.update_attributes(params[:note])
-        format.html { redirect_to(@note, :notice => 'Note was successfully updated.') }
+        format.html { redirect_to(@user, :notice => 'Note was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -72,11 +77,12 @@ class NotesController < ApplicationController
   # DELETE /notes/1
   # DELETE /notes/1.xml
   def destroy
-    @note = Note.find(params[:id])
+    @user = User.find(params[:user_id])
+    @note = @user.notes.find(params[:id])
     @note.destroy
 
     respond_to do |format|
-      format.html { redirect_to(notes_url) }
+      format.html { redirect_to(@user) }
       format.xml  { head :ok }
     end
   end

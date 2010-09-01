@@ -29,13 +29,13 @@
 <% @user.notes.each do |note| %>
   <tr>
     <td><%= note.text %></td>
-    <td><%= link_to 'Show', note_path(note) %></td>
-    <td><%= link_to 'Edit', edit_note_path(note) %></td>
-    <td><%= link_to 'Destroy', user_path(note), :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', user_note_path(@user, note) %></td>
+    <td><%= link_to 'Edit', edit_user_note_path(@user, note) %></td>
+    <td><%= link_to 'Destroy', user_note_path(@user, note), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Note', new_note_path %>
+<%= link_to 'New Note', new_user_note_path(@user) %>
