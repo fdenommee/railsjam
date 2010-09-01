@@ -1,6 +1,6 @@
 module UsersHelper
-  def display_sex(sex)
-    return 'F' if sex == User::FEMALE
-    return 'M' if sex == User::MALE
+  def display_gender(gender)
+    return 'F' if gender == User::FEMALE
+    return 'M' if gender == User::MALE
   end
 end
