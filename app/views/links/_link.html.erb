@@ -1,0 +1,6 @@
+<tr>
+  <td><%= link_to link.url, link.url %></td>
+  <td><%= link_to 'Edit', edit_user_link_path(@user, link) %></td>
+  <td><%= link_to 'Destroy', user_link_path(@user, link), :confirm => 'Are you sure?', :method => :delete %></td>
+  <td><%= time_ago_in_words link.created_at %></td>
+</tr>

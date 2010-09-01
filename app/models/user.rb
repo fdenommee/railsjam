@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
 
   has_many :notes
   has_many :links
+  has_many :updates
 end

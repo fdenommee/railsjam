@@ -15,6 +15,22 @@
 <%= link_to 'Back', users_path %>
 
 
+<h1>Listing updates</h1>
+
+<table>
+  <tr>
+    <th>Update</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+
+<% @user.updates.each do |update| %>
+    <%= render(update.subject) %>
+<% end %>
+</table
+
 <h1>Listing notes</h1>
 
 <table>

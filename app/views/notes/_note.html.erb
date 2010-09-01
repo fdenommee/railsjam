@@ -1,0 +1,6 @@
+<tr>
+  <td><%= link_to note.text, user_note_path(@user, note) %></td>
+  <td><%= link_to 'Edit', edit_user_note_path(@user, note) %></td>
+  <td><%= link_to 'Destroy', user_note_path(@user, note), :confirm => 'Are you sure?', :method => :delete %></td>
+  <td><%= time_ago_in_words note.updated_at %></td>
+</tr>
