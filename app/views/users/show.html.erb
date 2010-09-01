@@ -24,14 +24,15 @@
     <th></th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
 
 <% @user.notes.each do |note| %>
   <tr>
-    <td><%= note.text %></td>
-    <td><%= link_to 'Show', user_note_path(@user, note) %></td>
+    <td><%= link_to note.text, user_note_path(@user, note) %></td>
     <td><%= link_to 'Edit', edit_user_note_path(@user, note) %></td>
     <td><%= link_to 'Destroy', user_note_path(@user, note), :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= time_ago_in_words note.updated_at %></td>
   </tr>
 <% end %>
 </table>
@@ -53,8 +54,7 @@
 
 <% @user.links.each do |link| %>
   <tr>
-    <td><%= link.url %></td>
-    <td><%= link_to 'Show', user_link_path(@user, link) %></td>
+    <td><%= link_to link.url, link.url %></td>
     <td><%= link_to 'Edit', edit_user_link_path(@user, link) %></td>
     <td><%= link_to 'Destroy', user_link_path(@user, link), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
