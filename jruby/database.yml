@@ -17,6 +17,6 @@ test:
 
 production:
   adapter: <%= defined?(JRUBY_VERSION) ? 'jdbcsqlite3' : 'sqlite3' %>
-  database: /home/greg/dev/railsjam/db/development.sqlite3 
+  database: /home/greg/dev/projects/railsjam/db/development.sqlite3 
   pool: 5
   timeout: 5000
